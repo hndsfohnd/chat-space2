@@ -1,12 +1,11 @@
 .header
-  グループを作成しました
 .contents
   .contents__left 
     .contents__left1
-      .contents__left1--seo seo
+      .contents__left1--seo=current_user.name
       =link_to "", class: "contents__left1 contents__left--icon" do
         = fa_icon 'edit', class: "contents__left--btn " 
-      =link_to "", class: "contents__left1 contents__left--icon" do
+      =link_to edit_user_path(current_user), class: "contents__left1 contents__left--icon" do
         = fa_icon 'cog', class: "contents__left--btn contents__left--btn2"   
 
     .contents__left--bottom 
