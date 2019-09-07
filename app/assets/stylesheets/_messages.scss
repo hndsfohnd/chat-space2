@@ -1,0 +1,151 @@
+$blue: #38AEF0;
+$w: white;
+@mixin font{
+  font-weight: bold;
+  font-size: 15px;
+}
+.header{
+  background-color: $blue;
+  color: $w;
+  text-align: center;
+}
+
+
+.contents{
+  display: flex;
+  box-sizing: border-box;
+  height: 100%;
+  &__left1{
+    height: 95px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    width: 300px;
+    text-align: right;
+    line-height: 95px;
+       &--seo{
+       width: 228px;
+       text-align: left;
+       line-height: 55px;
+       }
+  }
+  &__left{
+    box-sizing: border-box;
+    color: $w;
+    background-color: #253141;
+      &--icon{
+        color: $w;
+        box-sizing: border-box;
+        padding: 0;
+        text-align: right;
+        width: 16px;
+        height: 55px;
+        line-height: 55px;
+        text-decoration: none;
+        }
+      &--btn{
+        line-height: 55px;
+         }
+      &--btn2{
+        padding-left: 5px;
+      }
+      &--bottom{
+        background-color: #2f3e51;
+        padding: 20px 20px 0 20px;
+        height: calc(100vh - 119px);
+      }
+    &--bottom2{
+      @include font;
+      color: $w;
+      &--comments{
+      font-size: 11px;
+      padding-top: 5px;
+      }
+    }
+    &--bottom3{
+      padding-top: 40px;
+      color: $w;
+      @include font;
+    }
+  }
+&__main{
+  width: calc(100vw - 300px);
+  box-sizing: border-box;
+  font-size: 20px;
+  color: #333333;
+  }
+  &__main1{
+    display: flex;
+    padding: 0px 40px 0 40px;
+    justify-content: space-between;
+    &--list{
+    padding-top: 35px;
+    color: #333333;
+    font-size: 20px;
+    }
+  &__main2{
+     padding-top: 25px;
+     font-size: 12px;
+     color: #999999;
+     border-bottom: #eeeeee;
+  }
+  &__main3{
+    margin-top: 28px;
+    height: 40px;
+    padding: 0 20px;
+    border: solid 1px $blue;
+    color: $blue;
+    line-height: 40px;
+    text-decoration: none;
+  }  
+  }
+  &__bottom{
+    background-color: #fafafa;
+    padding: 46px 40px 0 40px;
+    height: calc(100vh - 235px);
+  }
+    &__bottom1{
+     font-size: 16px;
+     font-weight: bold;
+     color: #434A54;
+       &--data{
+         font-size: 12px;
+         font-weight: normal;
+       }
+       &--comments{
+         font-size: 14px;
+         color: #434A54;
+         padding-bottom: 40px;
+       }
+  }
+  &__input{
+    height: 90px;
+    background-color: #DDDDDD;
+    line-height: 90px;
+    padding: 0 40px;   
+    &--text{
+      width: calc(100vw - 577px);
+      height: 50px;
+      padding-left: 10px;
+      font-size: 16px;
+      color: #434A54;
+     }
+    &--label{
+      padding: 10px;
+      position: relative;
+      right: 40px;
+      z-index: 3;
+     }
+    &--label2{
+      position: relative;
+      right: 60px;
+     }
+    &--sent{
+      background-color: $blue;
+      height: 50px;
+      color: $w;
+      padding:0 30px;
+      margin-left: 15px;    
+    }
+  }    
+}
