@@ -7,14 +7,13 @@
         = fa_icon 'edit', class: "contents__left--btn " 
       =link_to edit_user_path(current_user), class: "contents__left1 contents__left--icon" do
         = fa_icon 'cog', class: "contents__left--btn contents__left--btn2"   
-
     .contents__left--bottom 
       = render partial: 'leftgroup'
 
   .contents__main
     .contents__main1 
       .contents__main1--list sample <br><span class="contents__main1__main2">member seo neko
-      =link_to "Edit" , "edit_group(params[id])_path" , class: "contents__main1__main3"
+      =link_to "Edit" , edit_group_path(current_user) , class: "contents__main1__main3"
        
     
     .contents__bottom

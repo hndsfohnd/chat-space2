@@ -151,4 +151,15 @@ $w: white;
   .name{
     line-height: 55px;
   }    
+  .group__name{
+    padding-top: 20px;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+  }
+  .group__message{
+    color: white;
+    font-size: 11px;
+    padding-bottom: 20px;
+  }
 }
