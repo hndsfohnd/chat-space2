@@ -1,4 +1,7 @@
-.contents__bottom1 seo <span class="contents__bottom1--data">2016/09/11 06:12:55
-.contents__bottom1--comments hellow world 
-.contents__bottom1 neko <span class="contents__bottom1--data">2016/09/11 06:20:30
-.contents__bottom1--comments good bey
+.contents__bottom1
+  = message.user.name 
+  .contents__bottom1--data=message.created_at.strftime("%Y/%m/%d %H:%M")
+.contents__bottom1--comments
+  - if message.content.present?
+    = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?

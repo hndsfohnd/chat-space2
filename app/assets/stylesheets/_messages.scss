@@ -53,6 +53,7 @@ $w: white;
         background-color: #2f3e51;
         padding: 20px 20px 0 20px;
         height: calc(100vh - 119px);
+        overflow: scroll;
       }
     &--bottom2{
       @include font;
@@ -103,14 +104,18 @@ $w: white;
     background-color: #fafafa;
     padding: 46px 40px 0 40px;
     height: calc(100vh - 235px);
+    overflow: scroll;
   }
     &__bottom1{
      font-size: 16px;
      font-weight: bold;
      color: #434A54;
+     display: flex;
        &--data{
          font-size: 12px;
          font-weight: normal;
+         padding-left: 10px;
+         padding-top :3px;
        }
        &--comments{
          font-size: 14px;
@@ -138,7 +143,7 @@ $w: white;
      }
     &--label2{
       position: relative;
-      right: 60px;
+      right: 20px;
      }
     &--sent{
       background-color: $blue;
@@ -162,4 +167,8 @@ $w: white;
     font-size: 11px;
     padding-bottom: 20px;
   }
+  .upload-icon{
+    display: none;
+  }
+  
 }

@@ -17,13 +17,14 @@
        
     
     .contents__bottom
-      = render partial: 'message'
+      = render partial: 'message', collection: @messages
       
       
     .contents__input
       .contents__input2
-        %input.contents__input--text{ type: "text", placeholder: " type a message"}
-        %label.contents__input--label{for:"upload-icon"}
-        = fa_icon'picture-o', class: "contents__input--label2" 
-        %input{type:"file",style:"display:none;",id:"upload-icon"} 
-        %input.contents__input--sent{ type: "submit", value:"Send"} 
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'contents__input--text', placeholder: 'type a message'
+          = f.label :image, class: 'contents__input--label' do
+            = fa_icon 'picture-o', class: 'contents__input--label2'
+            = f.file_field :image, class: 'upload-icon'
+          = f.submit 'Send', class: 'contents__input--sent'
