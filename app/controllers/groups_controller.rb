@@ -32,6 +32,6 @@ end
 
   private
   def group_params
-    params.require(:group).permit(:name, { :user_ids => [] })
+    params.require(:group).permit(:name, { :user_ids => [] })#→配列を許可している、この場合{gorup: {name: ‘’, ids: {[]}}」
   end
 end

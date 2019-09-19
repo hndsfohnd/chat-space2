@@ -1,5 +1,5 @@
 - current_user.groups.each do |group|
-  = link_to group_messages_path(group) do
+  = link_to group_messages_path(group.id) do
     .group__name
       = group.name
     .group__message

@@ -4,4 +4,4 @@
 .contents__bottom1--comments
   - if message.content.present?
     = message.content
-    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+  = image_tag message.image.url, class: 'image' if message.image.present?
