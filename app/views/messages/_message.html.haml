@@ -1,6 +1,6 @@
 .contents__bottom1
   = message.user.name 
-  .contents__bottom1--data=message.created_at.strftime("%Y/%m/%d %H:%M")
+  .contents__bottom1--data=message.created_at
 .contents__bottom1--comments
   - if message.content.present?
     = message.content
