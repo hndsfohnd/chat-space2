@@ -4,12 +4,12 @@ $(function(){
     var html = `
     <div class="message" data-id="${message.id}">
     <div class="contents__bottom1">
-    ${message.name}
+      ${message.name}
     <div class="contents__bottom1--data">${message.created_at}</div>
     </div>
     <div class="contents__bottom1--comments">
-    ${message.content}
-    ${image}
+      ${message.content}
+      ${image}
     </div>`
     return html;
     }
