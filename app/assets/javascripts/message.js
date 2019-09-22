@@ -8,13 +8,11 @@ $(function(){
     <div class="contents__bottom1--data">${message.created_at}</div>
     </div>
     <div class="contents__bottom1--comments">
-    
     ${message.content}
-
     ${image}
-   </div>`
+    </div>`
     return html;
-  }
+    }
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -26,7 +24,7 @@ $(function(){
       dataType: 'json',
       processData: false,
       contentType: false
-  })
+    })
   .done(function(message){
     var html = buildHTML(message);
     $('.contents__bottom').append(html)
@@ -34,10 +32,9 @@ $(function(){
     $('.contents__input--sent').attr('disabled', false);
     $('.contents__bottom').animate({ scrollTop: $('.contents__bottom')[0].scrollHeight});
     return false
-  })
+     })
   .fail(function(){
     alert('エラー');
-  })
-
-});
+    })
+  });
 });
