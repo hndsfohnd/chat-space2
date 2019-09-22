@@ -30,7 +30,7 @@ $(function(){
   .done(function(message){
     var html = buildHTML(message);
     $('.contents__bottom').append(html)
-    $('.contents__input--text').val('')
+    $("form").get(0).reset();
     $('.contents__input--sent').attr('disabled', false);
     $('.contents__bottom').animate({ scrollTop: $('.contents__bottom')[0].scrollHeight});
     return false
