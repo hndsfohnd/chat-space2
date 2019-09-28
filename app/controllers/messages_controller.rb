@@ -10,9 +10,11 @@ class MessagesController < ApplicationController
       respond_to do |format|
         format.html { redirect_to group_messages_path(@group), notice: 'メッセージが送信されました'  }
         format.json
+      else
+        @messages = @group.messages.includes(:user)
+      end
+    end
   end
- end
-end
   private
   def params_messages
     params.require(:message).permit(:content, :image).merge(user_id:current_user.id)
