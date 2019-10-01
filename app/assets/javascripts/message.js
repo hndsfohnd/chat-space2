@@ -55,18 +55,12 @@ $(function(){
             $('.contents__bottom').append(insertHTML);//メッセージを追加
             })
           $('.contents__bottom').animate({ scrollTop: $('.contents__bottom')[0].scrollHeight},'fast');//最新のメッセージが一番下に表示されようにスクロールする。
-         console.log(last_message_id)
               })
         .fail(function () {
           alert('自動更新に失敗しました');//ダメだったらアラートを出す
         });
-
     };
-
     };
-
     setInterval(reloadMessages,4000);
     });
-
-
   });
