@@ -1,7 +1,8 @@
-.contents__bottom1
-  = message.user.name 
-  .contents__bottom1--data=message.created_at
-.contents__bottom1--comments
-  - if message.content.present?
-    = message.content
-  = image_tag message.image.url, class: 'image' if message.image.present?
+.contents__bottom5{"data-message-id": "#{message.id}"}
+  .contents__bottom1
+    = message.user.name 
+    .contents__bottom1--data=message.created_at
+  .contents__bottom1--comments
+    - if message.content.present?
+      = message.content 
+    =image_tag message.image.url, class: 'image' if message.image.present?
