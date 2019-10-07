@@ -1,3 +1,4 @@
+$(document).on('turbolinks:load', function(){
 $(function(){
   function buildHTML(message){
     message.image ? image = `<img src="${message.image}">` : image = ""
@@ -35,7 +36,7 @@ $(function(){
      })
   .fail(function(){
     alert('エラー');
-    })
+  });
     var reloadMessages = function () {
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
         var last_message_id = $('.contents__bottom5').last().data("message-id") ; //dataメソッドで.messageにある:last最後のカスタムデータ属性を取得しlast_message_idに代入。
@@ -56,11 +57,14 @@ $(function(){
             })
           $('.contents__bottom').animate({ scrollTop: $('.contents__bottom')[0].scrollHeight},'fast');//最新のメッセージが一番下に表示されようにスクロールする。
               })
+
         .fail(function () {
           alert('自動更新に失敗しました');//ダメだったらアラートを出す
         });
     };
     };
-    setInterval(reloadMessages,4000);
-    });
+ 
+    setInterval(reloadMessages,5000);
+  })
   });
+});

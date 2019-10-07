@@ -1,14 +1,6 @@
 .header
 .contents
-  .contents__left 
-    .contents__left1
-      .contents__left1--seo=current_user.name
-      =link_to new_group_path(current_user), class: "contents__left1 contents__left--icon" do
-        = fa_icon 'edit', class: "contents__left--btn " 
-      =link_to edit_user_path(current_user), class: "contents__left1 contents__left--icon" do
-        = fa_icon 'cog', class: "contents__left--btn contents__left--btn2"   
-    .contents__left--bottom 
-      = render partial: '/shared/leftgroup' 
+  = render partial: '/shared/leftgroup' 
 
   .contents__main
     .contents__main1 
