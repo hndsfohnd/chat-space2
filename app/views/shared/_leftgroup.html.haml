@@ -8,8 +8,9 @@
         = fa_icon 'cog', class: "contents__left--btn contents__left--btn2"   
     .contents__left--bottom 
       - current_user.groups.each do |group|
-        = link_to group_messages_path(group.id) do
-          .group__name
-            = group.name
-          .group__message
-            = group.show_last_message
+        .group
+          = link_to group_messages_path(group) do
+            .group__name
+              = group.name
+            .group__message
+              = group.show_last_message
