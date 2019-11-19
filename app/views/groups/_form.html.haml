@@ -25,13 +25,13 @@
       #chat-group-users
         .chat-group-user.clearfix
           %p.chat-group-user__name
-            = current_user.name
-                      
+            = current_user.name 
+            %input{name: "group[user_ids][]",value: current_user.id,type: "hidden"}         
           
-      - @group.users.each do |user|
+      - @group.users.each do |user|   
         - if user != current_user
           .chat-group-user.clearfix{ id: "chat-group-user-#{user.id}" }
-            %input{name: "group[user_ids][]", type: "hidden", value: user.id}
+            %input{name: "group[user_ids][]",  value: user.id,type: "hidden"}
             %p.chat-group-user__name
               = user.name
             - if user.id != current_user.id

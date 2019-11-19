@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function(){
+
   $(function(){
     function buildHTML(message){
       message.image ? image = `<img src="${message.image}">` : image = ""
@@ -35,9 +35,9 @@ $(document).on('turbolinks:load', function(){
       return false
        })
     .fail(function (){
-      $('.contents__input--sent').attr('disabled', false);
       alert('error');
     });
+  });
       var reloadMessages = function () {
       if (window.location.href.match(/\/groups\/\d+\/messages/)){
           var last_message_id = $('.contents__bottom5').last().data("message-id") ; //dataメソッドで.messageにある:last最後のカスタムデータ属性を取得しlast_message_idに代入。
@@ -61,11 +61,7 @@ $(document).on('turbolinks:load', function(){
   
           .fail(function () {
             alert('自動更新に失敗しました');//ダメだったらアラートを出す
-          });
-      };
-      };
-   
-      setInterval(reloadMessages,8000);
+          });  
+      }; };
+      setInterval(reloadMessages,5000);
     })
-    });
-  });
