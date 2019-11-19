@@ -24,19 +24,16 @@
     .chat-group-form__field--right
       #chat-group-users
         .chat-group-user.clearfix
-          %p.chat-group-user__name
-            = current_user.name 
-            %input{name: "group[user_ids][]",value: current_user.id,type: "hidden"}         
-          
+           
       - @group.users.each do |user|   
-        - if user != current_user
-          .chat-group-user.clearfix{ id: "chat-group-user-#{user.id}" }
-            %input{name: "group[user_ids][]",  value: user.id,type: "hidden"}
-            %p.chat-group-user__name
-              = user.name
-            - if user.id != current_user.id
-              %a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove{ 'data-user-id': user.id }削除
-                
+        .chat-group-user.clearfix
+          %input{name: "group[user_ids][]", value: user.id ,type: "hidden"} 
+          %p.chat-group-user__name
+            = user.name
+          - if user.id != current_user.id
+            %a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove{ 'data-user-id': user.id }削除
+
+
 
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
